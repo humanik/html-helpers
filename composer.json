@@ -1,0 +1,21 @@
+{
+  "name": "humanik/html-helpers",
+  "description": "Html helpers",
+  "type": "library",
+  "require": {
+    "yiisoft/html": "^3.0@dev"
+  },
+  "autoload": {
+    "files": [
+      "html-helpers.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "humanik",
+      "email": "humanikdev@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
