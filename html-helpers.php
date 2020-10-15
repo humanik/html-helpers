@@ -13,14 +13,40 @@ if ( ! function_exists( 'html_attr' ) ) {
 }
 
 if ( ! function_exists( 'html_data' ) ) {
-	function html_data( array $data ) {
+	function html_data( array $data ): string {
 		return html_attr( [ 'data' => $data ] );
 	}
 }
 
 if ( ! function_exists( 'html_class' ) ) {
-	function html_class( array $classes ) {
+	function html_class( array $classes ): string {
 		return html_attr( [ 'class' => $classes ] );
+	}
+}
+
+if ( ! function_exists( 'html_tag' ) ) {
+	function html_open( string $tag, string $content = '', array $attributes = [] ): string {
+		try {
+			return Html::tag( $tag, $content, $attributes );
+		} catch ( Exception $exception ) {
+			return '';
+		}
+	}
+}
+
+if ( ! function_exists( 'html_open' ) ) {
+	function html_open( string $name, array $attributes = [] ): string {
+		try {
+			return Html::beginTag( $name, $attributes );
+		} catch ( Exception $exception ) {
+			return '';
+		}
+	}
+}
+
+if ( ! function_exists( 'html_close' ) ) {
+	function html_close( string $name ): string {
+		return Html::endTag( $name );
 	}
 }
 
