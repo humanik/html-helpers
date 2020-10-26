@@ -10,12 +10,6 @@
       "html-helpers.php"
     ]
   },
-  "authors": [
-    {
-      "name": "humanik",
-      "email": "humanikdev@gmail.com"
-    }
-  ],
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require-dev": {
