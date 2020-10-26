@@ -34,6 +34,16 @@ if ( ! function_exists( 'html_tag' ) ) {
 	}
 }
 
+if ( ! function_exists( 'html_img' ) ) {
+	function html_img( array $attributes = [] ): string {
+		try {
+			return Html::img( $attributes['src'] ?? '', $attributes );
+		} catch ( Exception $exception ) {
+			return '';
+		}
+	}
+}
+
 if ( ! function_exists( 'html_open' ) ) {
 	function html_open( string $name, array $attributes = [] ): string {
 		try {
