@@ -25,7 +25,7 @@ if ( ! function_exists( 'html_class' ) ) {
 }
 
 if ( ! function_exists( 'html_tag' ) ) {
-	function html_open( string $tag, string $content = '', array $attributes = [] ): string {
+	function html_tag( string $tag, string $content = '', array $attributes = [] ): string {
 		try {
 			return Html::tag( $tag, $content, $attributes );
 		} catch ( Exception $exception ) {
@@ -69,7 +69,7 @@ if ( ! function_exists( 'render_file' ) ) {
 			PHP_VERSION_ID >= 80000 ? ob_implicit_flush( false ) : ob_implicit_flush( 0 );
 
 			try {
-				extract( $params, EXTR_OVERWRITE );
+				extract( $params, EXTR_OVERWRITE ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 				require $template;
 				$result = ob_get_clean();
 			} catch ( Throwable $e ) {
