@@ -24,6 +24,16 @@ if ( ! function_exists( 'html_class' ) ) {
 	}
 }
 
+if ( ! function_exists( 'html_link' ) ) {
+	function html_link( string $anchor, string $url = '#', array $attributes = [] ): string {
+		try {
+			return Html::a( $anchor, $url, $attributes );
+		} catch ( Exception $exception ) {
+			return '';
+		}
+	}
+}
+
 if ( ! function_exists( 'html_tag' ) ) {
 	function html_tag( string $tag, string $content = '', array $attributes = [] ): string {
 		try {
