@@ -23,6 +23,9 @@ composer.phar
 # Mac DS_Store Files
 .DS_Store
 
+# local phpcs config
+/phpcs.xml
+
 # phpunit itself is not needed
 phpunit.phar
 # local phpunit config
