@@ -1,6 +1,9 @@
 <?php
 
 use Yiisoft\Html\Html;
+use Yiisoft\Html\Tag\A;
+use Yiisoft\Html\Tag\CustomTag;
+use Yiisoft\Html\Tag\Img;
 
 if (!function_exists('html_attr')) {
     function html_attr(array $attributes): string
@@ -28,46 +31,30 @@ if (!function_exists('html_class')) {
 }
 
 if (!function_exists('html_link')) {
-    function html_link(string $anchor, string $url = '#', array $attributes = []): string
+    function html_link(string $anchor, string $url = '#', array $attributes = []): A
     {
-        try {
-            return Html::a($anchor, $url, $attributes);
-        } catch (Exception $exception) {
-            return '';
-        }
+        return Html::a($anchor, $url, $attributes);
     }
 }
 
 if (!function_exists('html_tag')) {
-    function html_tag(string $tag, string $content = '', array $attributes = []): string
+    function html_tag(string $tag, string $content = '', array $attributes = []): CustomTag
     {
-        try {
-            return Html::tag($tag, $content, $attributes);
-        } catch (Exception $exception) {
-            return '';
-        }
+        return Html::tag($tag, $content, $attributes);
     }
 }
 
 if (!function_exists('html_img')) {
-    function html_img(?string $url = null, ?string $alt = null): string
+    function html_img(?string $url = null, ?string $alt = null): Img
     {
-        try {
-            return Html::img($url, $alt);
-        } catch (Exception $exception) {
-            return '';
-        }
+        return Html::img($url, $alt);
     }
 }
 
 if (!function_exists('html_open')) {
     function html_open(string $name, array $attributes = []): string
     {
-        try {
-            return Html::openTag($name, $attributes);
-        } catch (Exception $exception) {
-            return '';
-        }
+        return Html::openTag($name, $attributes);
     }
 }
 
