@@ -50,10 +50,10 @@ if (!function_exists('html_tag')) {
 }
 
 if (!function_exists('html_img')) {
-    function html_img(array $attributes = []): string
+    function html_img(?string $url = null, ?string $alt = null): string
     {
         try {
-            return Html::img($attributes['src'] ?? '', $attributes);
+            return Html::img($url, $alt);
         } catch (Exception $exception) {
             return '';
         }
@@ -64,7 +64,7 @@ if (!function_exists('html_open')) {
     function html_open(string $name, array $attributes = []): string
     {
         try {
-            return Html::beginTag($name, $attributes);
+            return Html::openTag($name, $attributes);
         } catch (Exception $exception) {
             return '';
         }
@@ -74,7 +74,7 @@ if (!function_exists('html_open')) {
 if (!function_exists('html_close')) {
     function html_close(string $name): string
     {
-        return Html::endTag($name);
+        return Html::closeTag($name);
     }
 }
 

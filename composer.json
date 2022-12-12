@@ -1,18 +1,17 @@
 {
-  "name": "humanik/html-helpers",
-  "description": "Html helpers",
-  "type": "library",
-  "require": {
-    "yiisoft/html": "^3.0@dev"
-  },
-  "autoload": {
-    "files": [
-      "html-helpers.php"
-    ]
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "require-dev": {
-    "phpunit/phpunit": "^9.4"
-  }
+	"name": "humanik/html-helpers",
+	"description": "Html helpers",
+	"type": "library",
+	"autoload": {
+		"files": [
+			"html-helpers.php"
+		]
+	},
+	"prefer-stable": true,
+	"require-dev": {
+		"phpunit/phpunit": "^9.4"
+	},
+	"require": {
+		"yiisoft/html": "^2.5"
+	}
 }
